@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Musa - Te Ayuda</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/css/bootstrap-select.min.css">
+</head>
+
+<body>
+    <div id="mainSidenav" class="sidenav">
+        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+        <div class="info-section white">
+            <!-- <p>DESCRIPCIÓN</p> -->
+            <p><strong class="orange">Musa </strong> te indica la entidad a la que debes ir en caso de sufrir algún tipo de
+                violencia. Selecciona el caso de violencia que vives y en el mapa verás el lugar más cercano al que debes
+                ir. </p>
+            <div class="info-step">
+                <img class="icon-align" src="images/step_one.png">
+                <span>Selecciona la situación que vives:</span>
+            </div>
+        </div>
+        <div class="info-option white" onclick="showComisaries();">
+            <!-- <i class="fa fa-grav icon-align" ></i> -->
+            <img class="icon-align" src="images/yellow_marker.png">
+            <span>Agresión fisica o sexual por un familiar</span>
+        </div>
+        <div class="info-option white" onclick="showCAIVAS();">
+            <!-- <i class="fa fa-grav icon-align" ></i> -->
+            <img class="icon-align" src="images/orange_marker.png">
+            <span>Abuso sexual por un desconocido</span>
+        </div>
+        <div class="info-option white" onclick="showFiscalia();">
+            <!-- <i class="fa fa-map-marker icon-align"></i> -->
+            <img class="icon-align" src="images/green_marker.png">
+            <span>Agresión fisica por un desconocido</span>
+        </div>
+        <div class="info-footer">
+            <img src="images/footer.png" height="40">
+        </div>
+
+    </div>
+    <div id="secondSidenav" class="sidenav">
+
+
+
+        <div class="place-section white">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+            <i class="fa fa-angle-left" style="font-size:30px; vertical-align:middle"></i>
+            <span style="font-size: 14px;">REGRESAR</span>
+        </a>
+            <img class="icon-align" src="images/green_marker.png">
+            <span id="place_name">AAlguún lusgaras asdasdasd</span>
+        </div>
+        <img id="place_image" src="images/justicia.jpg" class="place-image">
+        <div class="place-info-section white">
+            <div class="place-data-option">
+                <i class="fa fa-map-marker icon-align" style="    margin-right: 15px;"></i>
+                <!-- <img class="icon-align" src="images/green_marker.png"> -->
+                <span id="place_address">Dirección:</span>
+                <span id="place_address_val"></span>
+            </div>
+            <div class="place-data-option">
+                <i class="fa fa-phone icon-align"></i>
+                <!-- <img class="icon-align" src="images/green_marker.png"> -->
+                <span id="place_phone">Teléfono:</span>
+                <span id="place_phone_val"></span>
+            </div>
+            <div class="place-data-option" style="
+    margin-top: 30px;
+">
+                <i class="fa fa-info-circle icon-align" style="font-size: 25px !important;"></i>
+                <!-- <img class="icon-align" src="images/green_marker.png"> -->
+                <span id="place_info">Mas Información: </span>
+                <span id="place_info_val"></span>
+
+            </div>
+
+            <!-- <p id="place_address">Dirección: asdasdas</p> -->
+            <!-- <p id="place_phone" >Teléfono: asdasdas</p> -->
+            <!-- <p id="place_info">Mas Información: asdasdas</p> -->
+
+        </div>
+        <div class="place-footer">
+            <i class="fa fa-comment-o icon-align orange" style="font-size: 25px !important;"></i>
+            <!-- <img class="icon-align" src="images/green_marker.png"> -->
+            <span id="place_info">En caso de necesitar ayuda inmediata, <strong class="orange" style="padding-left: 40px;">LLAMA A LA LINEA NACIONAL 123</strong></span>
+        </div>
+    </div>
+    <div id="thirdSidenav" class="sidenav">
+        <div class="info-section white">
+            <!-- <p>DESCRIPCIÓN</p> -->
+            <p><strong class="orange"><i>Musa</i></strong> te indica la entidad a la que debes ir en caso de sufrir algún tipo
+                de violencia. Selecciona el caso de violencia que vives y en el mapa verás el lugar más cercano al que debes
+                ir. </p>
+            <div class="info-step">
+                <img class="icon-align" src="images/step_one.png">
+                <span>Selecciona tu localidad:</span>
+            </div>
+            <div class="location-select">
+                <select class="selectpicker select-sidebar" onchange="centerMapOnLocation($(this).val().toUpperCase());">
+                    <option>All</option>
+                    <option>Usaquen</option>
+                    <option>Chapinero</option>
+                    <option>Santa Fe</option>
+                    <option>San Cristobal</option>
+                    <option>Usme</option>
+                    <option>Tunjuelito</option>
+                    <option>Bosa</option>
+                    <option>Kennedy</option>
+                    <option>Fontibon</option>
+                    <option>Engativa</option>
+                    <option>Barrios Unidos</option>
+                    <option>Teusaquillo</option>
+                    <option>Los Martires</option>
+                    <option>Antonio Narino</option>
+                    <option>Puente Aranda</option>
+                    <option>Candelaria</option>
+                    <option>Rafael Uribe Uribe</option>
+                    <option>Ciudad Bolivar</option>
+                    <option>Sumapaz</option>
+                </select>
+            </div>
+            <div class="info-step">
+                <img class="icon-align" src="images/step_two.png">
+                <span style="font-size: 15px;">Selecciona la situación en que vives:</span>
+            </div>
+        </div>
+        <div class="info-option white" onclick="showComisaries()">
+            <!-- <i class="fa fa-grav icon-align" ></i> -->
+            <img class="icon-align" src="images/yellow_marker.png">
+            <span>Agresión fisica o sexual por un familiar</span>
+        </div>
+        <div class="info-option white" onclick="showCAIVAS()">
+            <!-- <i class="fa fa-grav icon-align" ></i> -->
+            <img class="icon-align" src="images/orange_marker.png">
+            <span>Abuso sexual por un desconocido</span>
+        </div>
+        <div class="info-option white" onclick="showFiscalia()">
+            <!-- <i class="fa fa-grav icon-align"></i> -->
+            <img class="icon-align" src="images/green_marker.png">
+            <span>Abuso sexual por un familiar</span>
+        </div>
+        <div class="info-footer"></div>
+    </div>
+    <nav class="navbar navbar-default navbar-musa">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div style="width: 345px; float: left;">
+                    <img alt="Logo" class="logo-musa" src="images/logo.png">
+                </div>
+
+                <div class="slogan-musa white">
+                    <div class="text-slogan">
+                        <p><b>MUJER SUFRES DE VIOLENCIA Y, ¿NO SABES A DONDE IR?</b></p>
+                        <p><i>Encuentra la entidad que necesitas</i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="main">
+        <div id="map"></div>
+        <a href='whatsapp://send' data-text="Musa Te Ayuda - Tus amigos se preocupan por ti, ellos quieren que sepas que estamos aquí para ti"
+            data-href=”http://musa.gov”>
+            <div class="button-purple-line"></div>
+        </a>
+        <div class="filters-button" onclick="showFilter()"></div>
+        <div class="filter-section">
+            <div class="filter-title">MÁS ENTIDADES</div>
+            <div class="checkbox" style="margin-left: 10px;">
+                <label><a href="#" onclick="showPolice();">Estaciones de Policia / CAI</a></label>
+            </div>
+            <div class="checkbox" style="margin-left: 10px;">
+                <label><a href="#" onclick="showHealth();">Centros de Salud</a></label>
+            </div>
+            <div class="checkbox" style="margin-left: 10px;">
+                <label><a href="#" onclick="showCasaIgualdad();">Casas de la igualdad</a></label>
+            </div>
+        </div>
+
+    </div>
+    <!-- <img src="images/linea-purpura.png" class="button-purple-line"> -->
+    </div>
+    </nav>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/js/bootstrap-select.min.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/miner.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkzwdgYxE2Jua3AW8KcMlfL-DIOrGxudo&callback=initMap&libraries=geometry">
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif !important;
+}
+/* The side navigation menu */
+.sidenav {
+    height: calc(100% - 75px); /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 75px;
+    left: 0;
+    background-color: #2b2b2b; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 0px; /* Place content 60px from the top */
+    transition: 0.5s;
+    /* transition:opacity 0.5s linear; */
+    transition: opacity 0.3s;
+    -webkit-transition: opacity 0.3s; 
+}
+
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 0px 0px 8px 0px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: relative;
+    top: 0;
+    right: 20px;
+    font-size: 25px;
+    margin-left: 214px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    /* padding: 20px; */
+    margin-left: 360px;
+    width: calc(100% - 360px);
+    height: calc(100% - 75px);
+}
+
+#mainSidenav{
+    width: 360px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+#map {
+    height: 100%;
+    width: 100%; 
+}
+
+.location-select{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.select-sidebar{
+    width: 245px !important;
+}
+
+.button-purple-line{
+    width: 240px;
+    height: 50px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: url(../images/help_white.png);
+}
+
+.button-purple-line:hover{
+    background: url(../images/help_orange.png);
+    cursor: pointer;
+}
+
+.navbar-musa{
+    margin-bottom:0px !important; 
+    height: 75px; 
+    background-color: #F44E4E !important;
+    border: 0px solid !important;
+    border-radius: 0px !important; 
+}
+
+.white{
+    color:white;
+}
+
+.orange{
+    color: #F44E4E;
+}
+
+.info-section{
+    border-top: 1px solid gray;
+    font-size: 16px;
+    padding: 25px 30px 25px 30px;
+}
+
+.info-option{
+    height: 65px;
+    border-top: 1px solid gray;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+.info-option:last-child{
+    border-bottom: 1px solid gray;
+}
+
+.info-option:hover{
+    -webkit-filter: opacity(30%); /* Safari */
+    filter: opacity(30%);
+    cursor: pointer;
+}
+
+.icon-align{
+    vertical-align: middle;
+    font-size: 30px !important;
+    margin-right: 10px;
+}
+
+.info-step{
+    margin-top: 25px;
+}
+
+.place-section{
+    border-top: 1px solid gray;
+    font-size: 18px;
+    padding: 0px 11px 15px 15px;
+    margin-top: 55px;
+}
+
+.place-image{
+    width: 100%;
+    max-height: 175px; 
+}
+
+.place-info-section{
+    font-size: 14px;
+    padding: 0px 30px 15px 15px;
+}
+
+.place-data-option{
+    height: 30px;
+    padding: 25px 30px 15px 15px;
+}
+
+.place-footer{
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    padding: 5px 30px 5px 15px;
+    text-align: center;
+}
+
+.logo-musa{
+    max-width: 175px;
+    margin-left: 65px;
+}
+
+.slogan-musa{
+    border-left: 1px solid white;
+    float: right;
+    height: 50px;
+    margin-top: 14px;
+}
+
+.text-slogan{
+    line-height: 7px;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+.filters-button{
+    position: absolute;
+    background: url(../images/plus.png);
+    width: 35px;
+    height: 35px;
+    right: 0;
+    top: 150px;
+}
+
+.filters-button:hover{
+    background: url(../images/plus_orange.png);
+    cursor: pointer;
+}
+
+.info-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 40px;
+}
+
+.info-footer img:hover{
+    cursor: pointer;
+}
+
+.filter-section{
+    width: 210px;
+    height: 130px;
+    position: absolute;
+    right: 35px;
+    top: 150px;
+    display: none;
+    background-color: white;
+}
+
+.filter-title{
+    background-color: #2b2b2b;
+    color: white;
+    text-align: center;
+    height: 35px;
+    padding-top: 8px;
+}
